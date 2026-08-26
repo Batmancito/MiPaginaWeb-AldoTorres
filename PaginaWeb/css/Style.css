@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(206, 234, 255);
+}
+h3{
+    font-family: fantasy;
+    color: black;
+}
+p{
+    font-family: fantasy;
+}
+.destacado{
+    background-color: rgb(0, 96, 198);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+#lista{
+    border: 2px solid black;
+    padding: 20px;
+}
+a{
+    font-size: large;
+    color: darkmagenta;
+}
+a:hover{
+    color: blue;
+}
