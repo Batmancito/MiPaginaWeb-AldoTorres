@@ -1,8 +1,6 @@
-// Ejercicios de JavaScript
-
-// ------------
 // Ejercicio 1
 // ------------
+
 let vida = 100;
 const limiteSuperior = 100;
 const limiteInferior = 50;
@@ -29,52 +27,55 @@ const intervalo = setInterval(() => {
   }
 }, 2000);
 
+
+
+
+
 // ------------
 // Ejercicio 2
-// Organiza los elementos de la bolsa
 // ------------
 /*
 const pokedex = [
   { nombre: "Pokeball", cantidad: 5, tipo: "Normal" },
   { nombre: "Quick Attack", cantidad: 2, tipo: "TM" },
   { nombre: "Repel", cantidad: 3, tipo: "Normal" },
-  { nombre: "Soda", cantidad: 10, tipo: "Consumable" },
+  { nombre: "Soda", cantidad: 10, tipo: "Consumible" },
   { nombre: "Surf", cantidad: 3, tipo: "TM" },
 ];
 
 function organizarBolsa(elementos) {
   const normales = elementos.filter((elemento) => elemento.tipo === "Normal");
   const tms = elementos.filter((elemento) => elemento.tipo === "TM");
-  const consumibles = elementos.filter((elemento) => elemento.tipo === "Consumable");
+  const consumibles = elementos.filter((elemento) => elemento.tipo === "Consumible");
 
   normales.sort((a, b) => b.cantidad - a.cantidad);
   tms.sort((a, b) => b.cantidad - a.cantidad);
   consumibles.sort((a, b) => b.cantidad - a.cantidad);
 
-  console.log("Elementos normales:");
-  console.log(normales);
+  console.log("Elementos normales: " + normales);
 
-  console.log("Maquinas tecnicas (TM):");
-  console.log(tms);
+  console.log("Maquinas tecnicas (TM): " + tms);
 
-  console.log("Consumibles:");
-  console.log(consumibles);
+  console.log("Consumibles: " + consumibles);
 }
 
 organizarBolsa(pokedex);
-*/
+*/ 
+
+
+
+
 
 // ------------
 // Ejercicio 3
-// Programa de ataque y calculo de daño entre dos Pokemones
 // ------------
 /*
-const pikachu = {
-  nombre: "Pikachu",
-  tipo: "Electrico",
-  ataque: "Impacto",
-  dano: 20,
-  vida: 50,
+const bulbasaur = {
+  nombre: "Bulbasaur",
+  tipo: "Planta",
+  ataque: "Latigo Cepa",
+  daño: 15,
+  vida: 40,
   defensa: 10
 };
 
@@ -82,7 +83,7 @@ const charmander = {
   nombre: "Charmander",
   tipo: "Fuego",
   ataque: "Ascuas",
-  dano: 15,
+  daño: 15,
   vida: 40,
   defensa: 5
 };
@@ -91,50 +92,50 @@ function mostrarEstadisticas(pokemon) {
   console.log("Nombre: " + pokemon.nombre);
   console.log("Tipo: " + pokemon.tipo);
   console.log("Ataque: " + pokemon.ataque);
-  console.log("Dano: " + pokemon.dano);
+  console.log("Daño: " + pokemon.daño);
   console.log("Vida: " + pokemon.vida);
   console.log("Defensa: " + pokemon.defensa);
 }
 
-function atacar(atacante, enemigo) {
-  console.log(atacante.nombre + " ataca a " + enemigo.nombre);
-  console.log("Ataque utilizado: " + atacante.ataque);
+function atacar(atacante, defensor) {
+  console.log(atacante.nombre + " ataco a " + defensor.nombre);
+  console.log(atacante.nombre + "uso: " + atacante.ataque);
 
-  let danoFinal = atacante.dano - enemigo.defensa;
+  let dañoFinal = atacante.daño - defensor.defensa;
 
-  if (danoFinal < 0) {
-    danoFinal = 0;
+  if (dañoFinal < 0) {
+    dañoFinal = 0;
   }
 
-  enemigo.vida -= danoFinal;
+  defensor.vida -= dañoFinal;
 
-  if (enemigo.vida < 0) {
-    enemigo.vida = 0;
+  if (defensor.vida < 0) {
+    defensor.vida = 0;
   }
 
-  console.log("Dano realizado: " + danoFinal);
-  console.log("Vida de " + enemigo.nombre + ": " + enemigo.vida);
+  console.log("EL pokemon defensor recibio " + dañoFinal + " puntos de daño");
+  console.log("Vida actual de " + defensor.nombre + ": " + defensor.vida);
 }
 
-function combate(atacante, enemigo) {
-  atacar(atacante, enemigo);
+function combate(atacante, defensor) {
+  atacar(atacante, defensor);
 
-  if (enemigo.vida === 0) {
+  if (defensor.vida === 0) {
     console.log(
-      "La batalla ha terminado. " + enemigo.nombre + " esta fuera de combate."
+      "Combate finalizado. " + defensor.nombre + " esta fuera de combate."
     );
     return;
   }
 
   setTimeout(() => {
-    combate(enemigo, atacante);
-  }, 1500);
+    combate(defensor, atacante);
+  }, 2000);
 }
 
-console.log("ESTADISTICAS INICIALES");
-mostrarEstadisticas(pikachu);
+console.log("Estadisticas de los pokemones:");
+mostrarEstadisticas(bulbasaur);
 mostrarEstadisticas(charmander);
 
-console.log("COMIENZA LA BATALLA");
-combate(pikachu, charmander);
+console.log("Fight!");
+combate(bulbasaur, charmander);
 */
